@@ -13,7 +13,7 @@
 - Continuous Rotation Servo (SM-4303r)
 - [3D Printed gear](http://www.thingiverse.com/thing:867)
 
-[x] find out what software brizdotdev is using - Joe
+- [x] find out what software brizdotdev is using - Joe
 ### Software
 - [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
 
