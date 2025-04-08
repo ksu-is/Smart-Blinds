@@ -4,7 +4,7 @@
 
 ## Repos
 - [x] Get 1 inspired repo from Gtihub - Joe  
-- [ ] Get 1 inspired repo from Github - William
+- [x] Get 1 inspired repo from Github - William
 
 - [Smart-Blinds/brizdotdev](https://github.com/brizdotdev/Smart-Blinds)  
 - [automatic-roller-blinds-motor/asafteirobert](https://github.com/asafteirobert/automatic-roller-blinds-motor)
