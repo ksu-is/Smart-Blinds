@@ -2,7 +2,7 @@
 
 ## Sprint 1
 
-###repos
+### Repos
 - [x] Get 1 inspired repo From Gtihub - Joe
 - [Smart-Blinds/brizdotdev](https://github.com/brizdotdev/Smart-Blinds)
 
