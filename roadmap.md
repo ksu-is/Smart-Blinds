@@ -1,21 +1,23 @@
 # Roadmap
 
 ## Sprint 1
-- [ ] Clone and test 2 chosen repo
 
-### Inspiration From Gtihub
-- [Smart-Blinds](https://github.com/brizdotdev/Smart-Blinds)
+- [x] Get 1 inspired repo From Gtihub - Joe
+###repos
+- [Smart-Blinds/brizdotdev](https://github.com/brizdotdev/Smart-Blinds)
 
-### Hardware:
+- [x] find out what hardware brizdotdev is using - Joe
+### Hardware
 - Raspberry Pi Model 3
 - 4x AA Batteries
 - Continuous Rotation Servo (SM-4303r)
 - [3D Printed gear](http://www.thingiverse.com/thing:867)
 
-### Software:
+[x] find out what software brizdotdev is using - Joe
+### Software
 - [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
 
-- [x] Document any setup or issues
+- [x] Clone, test, and document any setup or issues with brizdotdev's code
 ### Errors:
 Traceback (most recent call last):
   File "c:\Users\Joe\Documents\GitHub\Smart-Blinds Insparation\brizdotdevSmart-Blinds\Smart-Blinds\blinds.py", line 4, in <module>
@@ -27,6 +29,7 @@ It’s trying to import RPi.GPIO, which is only available on Raspberry Pi hardwa
 
 ### Possible Error fix:
 import RPi.GPIO as GPIO
+
 
 ## Sprint 2
 
