@@ -60,19 +60,27 @@ import RPi.GPIO as GPIO
 ### During sprint 2, you should be coding and using git to manage your code. 
 ### Complete these tasks
 
-- [ ] Get Github desktop working.
+- [X] Get Github desktop working.
       
-- [ ] Each person should making small updates and adding commit messages with them in your repository in our Github organization so that your work is visible. Do this with Github desktop. Otherwise, it will appear you are not working, and you will fail to demonstrate your knowledge of the application development process, which is one of our course goals. Thus, even if you claim to be working on your own machine but fail to post updates in Github in our shared organization where the professor can see them, you will fail on this grading item.
+- [X] Each person should making small updates and adding commit messages with them in your repository in our Github organization so that your work is visible. Do this with Github desktop. Otherwise, it will appear you are not working, and you will fail to demonstrate your knowledge of the application development process, which is one of our course goals. Thus, even if you claim to be working on your own machine but fail to post updates in Github in our shared organization where the professor can see them, you will fail on this grading item.
       
-- [ ] Each person should have committed at least 6 code changes of significant size (not just a spelling error fix for example). Each commit should include a comment that explains what you did. The comment must be specific (ie. not just Updated README.md but rather explain what your update was and why you did it briefly).
+- [X] Each person should have committed at least 6 code changes of significant size (not just a spelling error fix for example). Each commit should include a comment that explains what you did. The comment must be specific (ie. not just Updated README.md but rather explain what your update was and why you did it briefly).
       
-- [ ] You need to be tracking your progress on planned and emerging tasks in your projectroadmap.md document. I will look for changes in this document as signs of your progress. Using checkboxes, adding new tasks as they emerge, or adding “DONE” to mark done items all could count here.
+- [X] You need to be tracking your progress on planned and emerging tasks in your projectroadmap.md document. I will look for changes in this document as signs of your progress. Using checkboxes, adding new tasks as they emerge, or adding “DONE” to mark done items all could count here.
 
+- [X] explore and become familiar with GitHub Desktop.
+
+- [X] learn to sync local VScode folders to the KSU-IS GitHub for real-time changes within the organization.
+
+- [X] Create a notebook to break the code down into sections. This allows me to run each section and notice any errors within a micro sense. I've also been using Copilot to better understand each section of the code.
+
+- [ ] Change project name "Smart-Blinds" to avoid confusion.
+ 
 ## Sprint 3
 
 ### Complete these tasks
       
-- [ ] Continue coding and refining and testing in Sprint 3 as in Sprint 2. I will look for additional progress.
+- [ ] Continue coding and refining, and testing in Sprint 3 as in Sprint 2. I will look for additional progress.
 - [ ] If you had minor scope for your project and finish already, you need to add more scope and work on it.
 - [ ] In addition, coders typically think little about marketing and sustaining their projects. Inside a business there are many stakeholders who are not technical. As project managers and communicators who span the gap between the business and the coders, we need to create ways to communicate our projects quickly and accurately. This is just such an activity. 
 
