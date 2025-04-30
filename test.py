@@ -1,13 +1,23 @@
-from machine import Pin, PWM
+from machine import Pin
+from blinds import Blinds
 import time
 
-servo = PWM(Pin(18))
-servo.freq(50)
+pir = Pin(15, Pin.IN)   # PIR sensor input
+b = Blinds()
+
+last_state = 0
 
 while True:
-    servo.duty_u16(3000)   # ~0°
-    time.sleep(1)
-    servo.duty_u16(7500)   # ~90°
-    time.sleep(1)
-    servo.duty_u16(12000)  # ~180°
-    time.sleep(1)
+    motion = pir.value()
+
+    if motion == 1 and last_state == 0:
+        print("Motion detected! Toggling blinds.")
+        b.toggle()
+        last_state = 1
+        time.sleep(5)  # prevent retriggering
+
+    elif motion == 0 and last_state == 1:
+        print("Motion stopped.")
+        last_state = 0
+
+    time.sleep(0.1)

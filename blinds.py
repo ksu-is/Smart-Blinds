@@ -1,66 +1,57 @@
-from machine import Pin, PWM
+from machine import Pin
 import time
 
-# Store file on Pico (no home directory)
 FILENAME = "status.txt"
 
-# Motor timing constants
-TIMEUP = 38
-TIMEDOWN = 22
-
-# PWM duty values for servo positions (adjust as needed)
-UP_FAST = 10000     # ~2ms pulse
-DOWN_FAST = 5000    # ~1ms pulse
-CENTER = 7500       # ~1.5ms pulse (neutral)
+MOTOR_PIN = 16         # GPIO pin controlling the transistor
+RUN_TIME = 4           # Total time in seconds to fully open or close
 
 CLOSED = 0
 OPENED = 1
 
 class Blinds:
     def __init__(self):
-        self.status = 0
+        self.status = CLOSED
         self.read_status()
 
-        # Setup PWM on GPIO 18 at 50Hz
-        self.pwm = PWM(Pin(18))
-        self.pwm.freq(50)
-
-        # Move to center position to start
-        self.pwm.duty_u16(CENTER)
+        self.motor = Pin(MOTOR_PIN, Pin.OUT)
+        self.motor.value(0)
 
     def read_status(self):
         try:
             with open(FILENAME, "r") as f:
-                self.status = float(f.readline().strip())
+                self.status = int(float(f.readline().strip()))
+                print(f"Status read from file: {self.status}")
         except:
-            self.status = 0  # Default if file not found
+            self.status = CLOSED
+            print("No status file found. Defaulting to CLOSED.")
 
     def write_status(self):
         with open(FILENAME, "w") as f:
             f.write(str(self.status))
+        print(f"Status written: {self.status}")
 
     def move(self, target):
-        if target > self.status:
-            self.pwm.duty_u16(UP_FAST)
-            time.sleep(TIMEUP * (target - self.status))
-        elif target < self.status:
-            self.pwm.duty_u16(DOWN_FAST)
-            time.sleep(TIMEDOWN * (self.status - target))
+        if target == self.status:
+            print("Blinds already in desired position.")
+            return
 
-        # Stop servo (reset to center or turn off)
-        self.pwm.duty_u16(CENTER)
+        print("Moving motor with pulses...")
+        pulse_count = int(RUN_TIME * 10)  # 10 pulses per second
+        for _ in range(pulse_count):
+            self.motor.value(1)
+            time.sleep(0.1)  # ON duration
+            self.motor.value(0)
+            time.sleep(0.05)  # OFF duration
 
+        print("Motor pulsing complete.")
         self.status = target
         self.write_status()
 
     def toggle(self):
+        print("Toggling blinds...")
         if self.status == OPENED:
             self.move(CLOSED)
-        elif self.status == CLOSED:
+        else:
             self.move(OPENED)
         return self.status
-
-# Basic example for testing
-if __name__ == "__main__":
-    blinds = Blinds()
-    blinds.toggle()
